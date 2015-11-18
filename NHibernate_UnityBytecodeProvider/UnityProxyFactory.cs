@@ -14,7 +14,7 @@ namespace NHibernate_UnityBytecodeProvider
         {
             try
             {
-                var initializer = new UnityLazyInitializer(this.EntityName, this.PersistentClass, id, this.GetIdentifierMethod, this.SetIdentifierMethod, this.ComponentIdType, session, OverridesEquals);
+                var initializer = new UnityLazyInitializer(this.EntityName, this.PersistentClass, id, this.GetIdentifierMethod, this.SetIdentifierMethod, this.ComponentIdType, session);
 
                 var generatedProxy = Intercept.NewInstanceWithAdditionalInterfaces(
                    this.IsClassProxy ? this.PersistentClass : this.Interfaces[0],

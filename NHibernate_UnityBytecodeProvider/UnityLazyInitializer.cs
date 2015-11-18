@@ -5,10 +5,7 @@ using NHibernate.Proxy.Poco;
 using NHibernate.Type;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NHibernate_UnityBytecodeProvider
 {
@@ -19,8 +16,8 @@ namespace NHibernate_UnityBytecodeProvider
 
         private bool constructed;
 
-        public UnityLazyInitializer(string entityName, Type persistentClass, object id, MethodInfo getIdentifierMethod, MethodInfo setIdentifierMethod, IAbstractComponentType componentIdType, ISessionImplementor session, bool OverridesEquals)
-            : base(entityName, persistentClass, id, getIdentifierMethod, setIdentifierMethod, componentIdType, session, OverridesEquals)
+        public UnityLazyInitializer(string entityName, Type persistentClass, object id, MethodInfo getIdentifierMethod, MethodInfo setIdentifierMethod, IAbstractComponentType componentIdType, ISessionImplementor session)
+            : base(entityName, persistentClass, id, getIdentifierMethod, setIdentifierMethod, componentIdType, session)
         {
         }
 
