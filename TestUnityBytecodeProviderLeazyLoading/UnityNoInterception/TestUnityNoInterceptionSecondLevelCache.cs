@@ -8,7 +8,7 @@ namespace TestInterceptionLeazyLoading
     {
         public override void ComposeConfiguration(Dictionary<string, string> configuration)
         {
-            configuration.Add("DataSource", "ITCPC1MAPR1");
+            configuration.Add("DataSource", "MAURIZIO-WRK\\SQLEXPRESS");
             configuration.Add("UserId", "sa");
             configuration.Add("Password", "maurizio");
             configuration.Add("Database", "NHibernate_UnityBytecodeProvider");
