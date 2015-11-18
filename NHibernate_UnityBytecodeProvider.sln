@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernate_UnityBytecodeProvider", "NHibernate_UnityBytecodeProvider\NHibernate_UnityBytecodeProvider.csproj", "{D3D6BCD3-745F-44D1-96E7-067CDF6383FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernateSimpleProfiler", "NHibernateSimpleProfiler\NHibernateSimpleProfiler.csproj", "{BA5D2364-E0BC-4BD5-A46D-206349863886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{1E06CE71-B6F6-4CE4-9236-0395FDD74D39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnityBytecodeProviderLeazyLoading", "TestUnityBytecodeProviderLeazyLoading\TestUnityBytecodeProviderLeazyLoading.csproj", "{C5FD4347-A402-4225-9401-A0FFF80D038F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnityBytecodeProviderNoLeazyLoading", "TestUnityBytecodeProviderNoLeazyLoading\TestUnityBytecodeProviderNoLeazyLoading.csproj", "{EA75E41D-2F5C-401B-953F-A8CE43E63F72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3D6BCD3-745F-44D1-96E7-067CDF6383FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3D6BCD3-745F-44D1-96E7-067CDF6383FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3D6BCD3-745F-44D1-96E7-067CDF6383FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3D6BCD3-745F-44D1-96E7-067CDF6383FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA5D2364-E0BC-4BD5-A46D-206349863886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5D2364-E0BC-4BD5-A46D-206349863886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5D2364-E0BC-4BD5-A46D-206349863886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5D2364-E0BC-4BD5-A46D-206349863886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E06CE71-B6F6-4CE4-9236-0395FDD74D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E06CE71-B6F6-4CE4-9236-0395FDD74D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E06CE71-B6F6-4CE4-9236-0395FDD74D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E06CE71-B6F6-4CE4-9236-0395FDD74D39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5FD4347-A402-4225-9401-A0FFF80D038F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5FD4347-A402-4225-9401-A0FFF80D038F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5FD4347-A402-4225-9401-A0FFF80D038F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5FD4347-A402-4225-9401-A0FFF80D038F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA75E41D-2F5C-401B-953F-A8CE43E63F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA75E41D-2F5C-401B-953F-A8CE43E63F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA75E41D-2F5C-401B-953F-A8CE43E63F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA75E41D-2F5C-401B-953F-A8CE43E63F72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

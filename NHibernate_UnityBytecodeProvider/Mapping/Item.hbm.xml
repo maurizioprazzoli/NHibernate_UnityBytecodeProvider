@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Model.Core"
+                   namespace="Model.Core">
+
+  <class name="Item" lazy="true">
+    <cache include="all" usage="read-write"/>
+
+    <id name="Id" type="Guid" unsaved-value="00000000-0000-0000-0000-000000000000">
+      <generator class="assigned" />
+    </id>
+
+    <property name="ItemDescription" lazy="true"/>
+
+    <bag name="Bids" lazy="true" inverse="true" cascade="all">
+      <cache usage="read-write"></cache>
+      <key column="idItem"></key>
+      <one-to-many class="Bid" />
+    </bag>
+
+  </class>
+
+</hibernate-mapping>

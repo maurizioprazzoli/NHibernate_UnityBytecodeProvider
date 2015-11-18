@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Model.Core"
+                   namespace="Model.Core">
+
+  <class name="Bid" lazy="true">
+    <cache usage="read-only"/>
+
+    <id name="Id" type="Guid">
+      <generator class="assigned"/>
+    </id>
+
+    <property name="Description" lazy="true"/>
+
+    <many-to-one name="Item" column="idItem" class="Item" lazy ="false"/>
+
+    <set name="BidDetails" lazy="false" fetch="join" inverse="true" access="property">
+      <cache usage="read-write"/>
+      <key column="idBid"></key>
+      <one-to-many class="BidDetail" />
+    </set>
+
+  </class>
+
+</hibernate-mapping>
