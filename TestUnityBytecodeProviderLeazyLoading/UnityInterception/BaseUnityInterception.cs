@@ -240,7 +240,7 @@ namespace TestInterceptionLeazyLoading
                 numberOfException++;
             }
 
-            Assert.IsTrue(numberOfException == 2);
+            Assert.IsTrue(numberOfException == 1);
 
             StaticCounterHelper.ResetCounter();
 
