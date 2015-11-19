@@ -4,6 +4,7 @@
                    namespace="Model">
 
   <class name="Item" lazy="true">
+    <cache usage="read-write"/>
 
     <id name="Id" type="Guid">
       <generator class="assigned" />
@@ -16,6 +17,7 @@
     <property name="Description" lazy="true"/>
 
     <bag name="Bids" lazy="true" inverse="true" cascade="all">
+      <cache usage="read-write"/>
       <key column="idItem"></key>
       <one-to-many class="Bid" />
     </bag>

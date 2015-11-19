@@ -260,7 +260,6 @@ namespace TestInterceptionLeazyLoading
             }
         }
 
-
         public abstract void ComposeConfiguration(Dictionary<string, string> configuration);
     }
 }

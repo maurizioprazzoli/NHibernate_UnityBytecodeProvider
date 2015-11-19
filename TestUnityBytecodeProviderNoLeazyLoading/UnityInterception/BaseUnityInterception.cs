@@ -67,7 +67,7 @@ namespace TestInterceptionLeazyLoading
                 item.TestInterceptedMethodWithException();
             }
             catch
-            {  }
+            { }
 
             Assert.IsTrue(StaticCounterHelper.SuccessCounter == 0);
             Assert.IsTrue(StaticCounterHelper.ExceptionCounter == 0);
@@ -148,6 +148,95 @@ namespace TestInterceptionLeazyLoading
 
             Assert.IsTrue(StaticCounterHelper.SuccessCounter == 1);
             Assert.IsTrue(StaticCounterHelper.ExceptionCounter == 1);
+        }
+
+        [TestMethod]
+        public void ObjectGeneratedFromContainerCanBeInsertedRetrievedUpdateIntoDatabase()
+        {
+            Guid item_guid = Guid.NewGuid();
+            Guid bid1_guid = Guid.NewGuid();
+            Guid bid2_guid = Guid.NewGuid();
+
+            Item item = container.Resolve<Item>();
+            item.Id = item_guid;
+            item.Description = "Item Description";
+
+            item.AddBid(bid1_guid, "Bid1 Description");
+            item.AddBid(bid2_guid, "Bid2 Description");
+
+            using (var session = sessionFactory.OpenSession())
+            {
+                using (var tx = session.BeginTransaction())
+                {
+                    session.Save(item);
+                    tx.Commit();
+                }
+            }
+
+            StaticCounterHelper.ResetCounter();
+
+            item.TestInterceptedMethodWithSuccess();
+
+            try
+            {
+                item.TestInterceptedMethodWithException();
+            }
+            catch
+            { }
+
+            Assert.IsTrue(StaticCounterHelper.SuccessCounter == 1);
+            Assert.IsTrue(StaticCounterHelper.ExceptionCounter == 1);
+
+            Item itemRetrieved;
+            using (var session = sessionFactory.OpenSession())
+            {
+                using (var tx = session.BeginTransaction())
+                {
+                    itemRetrieved = session.Get<Item>(item_guid);
+                    tx.Commit();
+                }
+            }
+
+            StaticCounterHelper.ResetCounter();
+
+            item.TestInterceptedMethodWithSuccess();
+
+            try
+            {
+                item.TestInterceptedMethodWithException();
+            }
+            catch
+            { }
+
+            Assert.IsTrue(StaticCounterHelper.SuccessCounter == 1);
+            Assert.IsTrue(StaticCounterHelper.ExceptionCounter == 1);
+
+            Guid bid3_guid = Guid.NewGuid();
+            item.AddBid(bid3_guid, "Bid3 Description");
+
+            using (var session = sessionFactory.OpenSession())
+            {
+                using (var tx = session.BeginTransaction())
+                {
+                    session.Update(itemRetrieved);
+                    tx.Commit();
+                }
+            }
+
+            StaticCounterHelper.ResetCounter();
+
+            item.TestInterceptedMethodWithSuccess();
+
+            try
+            {
+                item.TestInterceptedMethodWithException();
+            }
+            catch
+            { }
+
+            Assert.IsTrue(StaticCounterHelper.SuccessCounter == 1);
+            Assert.IsTrue(StaticCounterHelper.ExceptionCounter == 1);
+
         }
 
         [TestMethod]

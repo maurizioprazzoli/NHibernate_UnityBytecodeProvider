@@ -3,7 +3,7 @@
                    namespace="Model">
 
   <class name="Bid" lazy="false">
-    <cache usage="read-only"/>
+    <cache usage="read-write"/>
 
     <id name="Id" type="Guid">
       <generator class="assigned"/>
