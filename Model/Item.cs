@@ -11,7 +11,13 @@ namespace Model
 
         private Int32 Version { get; set; }
 
-        public virtual String Description { get; set; }
+        private string description;
+        public virtual String Description {
+            get
+            { return description; }
+            set
+            { description = value; }
+        }
 
         public virtual IList<Bid> Bids { get; set; }
 

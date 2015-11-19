@@ -59,7 +59,8 @@ namespace NHibernate_UnityBytecodeProvider
             }
 
             NHibernate.Cfg.Environment.BytecodeProvider = new UnityBytecodeProvider(container,
-                                                                                    new UnityProxyFactoryFactory(),
+                                                                                    new UnityProxyFactoryFactory(container),
+                //new NHibernate.Bytecode.DefaultProxyFactoryFactory(),
                                                                                     new NHibernate.Type.DefaultCollectionTypeFactory());
             // Set Up interception
             var intercepter = new UnityInterceptor();
