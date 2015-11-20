@@ -56,6 +56,10 @@
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,8 +69,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NHibernateProxyUnityExtension.cs" />
-    <Compile Include="UnityLazyFieldInterceptor.cs" />
     <Compile Include="IIntercepted.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="UnityBytecodeProvider.cs" />
@@ -94,10 +96,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Users\prazzolim\Source\Repos\nhibernate-core\src\NHibernate\NHibernate.csproj">
-      <Project>{5909bfe7-93cf-4e5f-be22-6293368af01d}</Project>
-      <Name>NHibernate</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NHibernateSimpleProfiler\NHibernateSimpleProfiler.csproj">
       <Project>{ba5d2364-e0bc-4bd5-a46d-206349863886}</Project>
       <Name>NHibernateSimpleProfiler</Name>

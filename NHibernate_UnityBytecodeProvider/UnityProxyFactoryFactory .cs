@@ -1,19 +1,15 @@
-﻿using Microsoft.Practices.Unity;
-using NHibernate.Bytecode;
+﻿using NHibernate.Bytecode;
 using NHibernate.Proxy;
-using Unity.Bytecode;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace NHibernate_UnityBytecodeProvider
 {
     public class UnityProxyFactoryFactory : IProxyFactoryFactory
     {
-        IUnityContainer container;
-
-        public UnityProxyFactoryFactory(IUnityContainer container)
-        {
-            this.container = container;
-        }
-
         public IProxyValidator ProxyValidator
         {
             get { return new DynProxyTypeValidator(); }
@@ -21,12 +17,12 @@ namespace NHibernate_UnityBytecodeProvider
 
         public IProxyFactory BuildProxyFactory()
         {
-            return new UnityProxyFactory(container);
+            return new UnityProxyFactory();
         }
 
         public bool IsInstrumented(System.Type entityClass)
         {
-            return true;
+            return false;
         }
 
         public bool IsProxy(object entity)

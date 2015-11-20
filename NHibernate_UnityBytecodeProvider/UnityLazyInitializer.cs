@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Unity.Bytecode
+namespace NHibernate_UnityBytecodeProvider
 {
     [Serializable]
     public class UnityLazyInitializer : BasicLazyInitializer, IInterceptionBehavior
@@ -16,8 +16,8 @@ namespace Unity.Bytecode
 
         private bool constructed;
 
-        public UnityLazyInitializer(string entityName, Type persistentClass, object id, MethodInfo getIdentifierMethod, MethodInfo setIdentifierMethod, IAbstractComponentType componentIdType, ISessionImplementor session, bool overridesEquals)
-            : base(entityName, persistentClass, id, getIdentifierMethod, setIdentifierMethod, componentIdType, session, overridesEquals)
+        public UnityLazyInitializer(string entityName, Type persistentClass, object id, MethodInfo getIdentifierMethod, MethodInfo setIdentifierMethod, IAbstractComponentType componentIdType, ISessionImplementor session)
+            : base(entityName, persistentClass, id, getIdentifierMethod, setIdentifierMethod, componentIdType, session)
         {
         }
 
